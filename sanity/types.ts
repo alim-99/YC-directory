@@ -164,7 +164,6 @@ export type Author = {
   email?: string;
   image?: string;
   bio?: string;
-  category?: string;
 };
 
 export type Markdown = string;

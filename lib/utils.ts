@@ -12,3 +12,11 @@ export function formatDate(date: string) {
     year: 'numeric'
   })
 }
+
+export function formatViews(view: number) {
+  if (view === 0 || view === 0) {
+    return `View: ${view}`;
+  }
+
+  return `Views: ${view}`;
+}
