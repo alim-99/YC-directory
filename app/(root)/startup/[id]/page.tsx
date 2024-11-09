@@ -17,9 +17,7 @@ const page = async ( {params}: { params: Promise<{id: string}>}) => {
   const id = (await params).id;
 
   const post = await client.fetch(STARTUP_BY_ID_QUERY, { id });
-  const {title, description, image, author, category} = post;
-
-  console.log(id);
+  const {description, image, author, category} = post;
 
   if(!post) return notFound();
 
@@ -29,7 +27,7 @@ const page = async ( {params}: { params: Promise<{id: string}>}) => {
     <>
       <section className='pink_container !min-h-[230px]'>
         <p className='tag'>{formatDate(post?._createdAt)}</p>
-        <h1 className='heading'>{title}</h1>
+        <h1 className='heading'>{post.title}</h1>
         <p className='sub-heading !max-w-5xl'>{description}</p>
       </section>
 

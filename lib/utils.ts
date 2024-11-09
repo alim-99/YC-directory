@@ -14,9 +14,15 @@ export function formatDate(date: string) {
 }
 
 export function formatViews(view: number) {
-  if (view === 0 || view === 0) {
+  if (view === 1) {
     return `View: ${view}`;
+  } else if (view === null) {
+    return `Views: 0`;
   }
 
   return `Views: ${view}`;
+}
+
+export function parseServerActionResponse<T>(response: T) {
+  return JSON.parse(JSON.stringify(response));
 }
